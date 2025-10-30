@@ -7,7 +7,7 @@ Custom C program to read raw touch events from Kindle's touchscreen.
 ### On Kindle (using kterm)
 
 ```bash
-cd /mnt/us/extensions/kindlelauncher/src
+cd /mnt/us/extensions/openReader/src
 make
 cp touch_reader ../bin/
 ```

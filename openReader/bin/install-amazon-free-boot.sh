@@ -11,10 +11,20 @@ BOOT_SCRIPT="$SCRIPT_DIR/boot-replacement.sh"
 FBINK="/mnt/us/koreader/fbink"
 [ ! -f "$FBINK" ] && FBINK="/usr/bin/fbink"
 
+# Suspend framework to prevent UI interference
+killall -STOP cvm 2>/dev/null || true
+killall -STOP lipc-wait-event 2>/dev/null || true
+
+# Clear screen aggressively
+$FBINK -c
+$FBINK -f
+sleep 0.5
+
 # Check if running as root, if not, re-exec with su
 if [ "$(id -u)" != "0" ]; then
     # Not root, try to re-run with su
     $FBINK -c
+    $FBINK -f
     $FBINK -y 10 -pmh "Requesting root permissions..."
     $FBINK -y 12 -pm "This installer needs root access to"
     $FBINK -y 13 -pm "modify system boot configuration."
@@ -36,6 +46,8 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 $FBINK -c
+$FBINK -f
+sleep 0.3
 $FBINK -y 5 -pmh "═══════════════════════════════════════"
 $FBINK -y 6 -pmh "  AMAZON-FREE BOOT INSTALLER"
 $FBINK -y 7 -pmh "═══════════════════════════════════════"
@@ -104,6 +116,8 @@ sleep 1
 
 # Installation complete
 $FBINK -c
+$FBINK -f
+sleep 0.3
 $FBINK -y 5 -pmh "═══════════════════════════════════════"
 $FBINK -y 6 -pmh "  INSTALLATION COMPLETE!"
 $FBINK -y 7 -pmh "═══════════════════════════════════════"
@@ -136,8 +150,15 @@ $FBINK -y 33 -pm "Touch anywhere to reboot now..."
 read -t 30 -p "" 2>/dev/null || true
 
 $FBINK -c
+$FBINK -f
+sleep 0.3
 $FBINK -y 15 -pmh "Rebooting to OpenReader..."
+$FBINK -y 17 -pm "Please wait..."
 sleep 2
+
+# Resume framework before reboot
+killall -CONT cvm 2>/dev/null || true
+killall -CONT lipc-wait-event 2>/dev/null || true
 
 /sbin/reboot
 

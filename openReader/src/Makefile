@@ -43,7 +43,7 @@ clean:
 
 install: arm
 	@echo "Binary ready at: $(OUTDIR)/$(TARGET)"
-	@echo "Copy to Kindle: /mnt/us/extensions/kindlelauncher/bin/"
+	@echo "Copy to Kindle: /mnt/us/extensions/openReader/bin/"
 
 .PHONY: all arm test clean install
 

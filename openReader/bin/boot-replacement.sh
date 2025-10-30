@@ -3,7 +3,7 @@
 # Prevents Amazon framework from starting and launches OpenReader instead
 # Part of the "Amazon-Free Boot" system
 
-LAUNCHER_DIR="/mnt/us/extensions/kindlelauncher"
+LAUNCHER_DIR="/mnt/us/extensions/openReader"
 LOG_FILE="/var/tmp/openreader-boot.log"
 
 # Logging function

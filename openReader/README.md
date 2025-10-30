@@ -21,12 +21,12 @@ A minimal, touch-enabled launcher for Kindle e-readers that replaces the stock A
 
 ## Installation
 
-1. Extract the `kindlelauncher` folder to `/mnt/us/extensions/`
+1. Extract the `openReader` folder to `/mnt/us/extensions/`
 2. Launch from KUAL menu: "OpenReader Launcher" > "Launch OpenReader"
 
 The touch reader binary is precompiled and ready to use. If it doesn't work on your Kindle model, recompile it:
 ```bash
-cd /mnt/us/extensions/kindlelauncher/src
+cd /mnt/us/extensions/openReader/src
 make
 cp touch_reader ../bin/
 ```
@@ -73,7 +73,7 @@ Calibration coordinates are automatically applied.
 ## File Structure
 
 ```
-kindlelauncher/
+openReader/
 ├── bin/
 │   ├── touch-launcher.sh          # Main launcher
 │   ├── boot-replacement.sh        # Boot-time initialization
