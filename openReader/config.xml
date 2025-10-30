@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension>
 	<information>
-		<name>Kindle Launcher</name>
+		<name>OpenReader</name>
 		<version>1.0</version>
 		<author>terpinedream</author>
-		<id>kindlelauncher</id>
+		<id>openReader</id>
 	</information>
 	<menus>
 		<menu type="json" dynamic="true">menu.json</menu>
