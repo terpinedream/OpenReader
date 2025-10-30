@@ -1,0 +1,50 @@
+{
+    "items": [
+        {
+            "name": "OpenReader Launcher",
+            "priority": 0,
+            "items": [
+                {
+                    "name": "Launch OpenReader",
+                    "priority": 1,
+                    "action": "./bin/touch-launcher.sh",
+                    "exitmenu": true
+                },
+                {
+                    "name": "──────────────────────────",
+                    "priority": 2,
+                    "items": []
+                },
+                {
+                    "name": "Install Amazon-Free Boot",
+                    "priority": 3,
+                    "action": "./bin/install-amazon-free-boot.sh",
+                    "exitmenu": true
+                },
+                {
+                    "name": "Uninstall Amazon-Free Boot",
+                    "priority": 4,
+                    "action": "./bin/uninstall-amazon-free-boot.sh",
+                    "exitmenu": true
+                },
+                {
+                    "name": "──────────────────────────",
+                    "priority": 5,
+                    "items": []
+                },
+                {
+                    "name": "Calibrate Touch Controls",
+                    "priority": 6,
+                    "action": "./bin/test-touch-calibration.sh",
+                    "exitmenu": true
+                },
+                {
+                    "name": "Calibrate Slider",
+                    "priority": 7,
+                    "action": "./bin/test-slider-calibration.sh",
+                    "exitmenu": true
+                }
+            ]
+        }
+    ]
+}
